@@ -1,6 +1,10 @@
+import { src, dest } from 'gulp'
+import VueSFCPlugin from 'gulp-vue-sfc'
+
 function defaultTask() {
-  // place code for your default task here
-  console.log('defaultTask called')
+  return src('./src/**/*.vue')
+    .pipe(VueSFCPlugin())
+    .pipe(dest('./dist'))
 }
 
 export default defaultTask
